@@ -1,8 +1,12 @@
 # Script para Validar Email Marketing em PY
 
-Lembrando que o arquivo é pensando em duplicar uma base e ir validando na parte de 'Status'. Ele contém os seguintes filtros (em ordem, para não consumir tanto processamento):
+Script para classificar os emails de um csv se são válidos ou não, fazendo uma limpeza mais profunda. Ele contém os seguintes filtros (em ordem, para não consumir tanto processamento):
 - REGEX;
-- DNS;
-- SMTP.
+- DNS. Como instalar: https://stackoverflow.com/questions/21641696/python-dns-module-import-error ou código abaixo:
 
-Pensado para bases grandes em CSV.
+```python
+git clone https://github.com/rthalley/dnspython
+cd dnspython/
+python setup.py install
+```
+- SMTP.

@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 import re
 import smtplib
-import dns.resolver
+# import dnspython
 import csv
 import pandas as pd
 import sys
@@ -14,6 +16,7 @@ def badSyntax(emailPreValidation):
     match = re.match(regex, emailPreValidation)
     if match == None:
     	return True
+
 
 columns = ['Nome', 'Email', 'Telefone', 'Status']
 
@@ -44,13 +47,9 @@ for index, row in inFileSubscribersDF.iterrows():
 
     # 3. Validação por SMTP 
 
-print(outFileSubscribersDF)
-
-# outFileSubscribersCSV.writerow(row)
-# outFileSubscribersCSV.writerow(row)
-
-# inFileSubscribers = open("./teste.csv", "r")
-# inFileSubscribersCSV = csv.reader(inFileSubscribers, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+print("Teste do arquivo inicial em DF: " + outFileSubscribersDF)
+test_csv = pd.read_csv("./out.csv", error_bad_lines=False)
+print("O ARQUIVO FINAL EM SI: " + test_csv)
 
 """ for row in inSubscribersFileRead:
     emailForValidation = str(row[3])
